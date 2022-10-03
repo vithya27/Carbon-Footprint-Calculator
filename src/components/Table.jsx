@@ -3,15 +3,20 @@ import { useState } from "react";
 import carbonData from "./mockdata";
 
 const Table = (props) => {
-  let CO2E = props.activity.map((d, index) => {
-    return <td key={index}>{parseInt(d.co2e, 10)}</td>;
-  });
-  let numberOfTrees = props.activity.map((d, index) => {
-    return <td key={index}>{parseInt(d.co2e / 26, 10)}</td>;
-  });
+  //   let CO2E = props.activity.map((d, index) => {
+  //     return <td key={index}>{parseInt(d.co2e, 10)}</td>;
+  //   });
+  //   let numberOfTrees = props.activity.map((d, index) => {
+  //     return <td key={index}>{parseInt(d.co2e / 26, 10)}</td>;
+  //   });
 
   return (
     <div className="container">
+      <header>
+        <center>
+          <h2>Carbon Emissions History</h2>
+        </center>
+      </header>
       <div className="table-responsive-sm">
         <table className="table table-bordered">
           <thead>
@@ -23,10 +28,10 @@ const Table = (props) => {
           </thead>
           <tbody>
             <tr>
-              <td>{props.activity.activity}</td>
+              <td>{props.activity[0].activity}</td>
 
-              {CO2E}
-              {numberOfTrees}
+              {/* {CO2E}
+              {numberOfTrees} */}
             </tr>
           </tbody>
         </table>

@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-const Form = () => {
+const Form = (props) => {
   const {
+    // register an input field into React Hook Form so that it is available for the validation, and its value can be tracked for changes.
     register,
     handleSubmit,
     reset,
-    getValues,
-    formState: { errors },
-  } = useForm();
+    formState,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm({ defaultValues: { activity: "", from: "", to: "" } });
 
-  reset({ ...getValues, activity: "" });
-
-  const onSubmit = (data) => console.log(data);
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({ activity: "", from: "", to: "" });
+    }
+  }, [formState, reset]);
 
   return (
     <>
@@ -20,7 +23,9 @@ const Form = () => {
         <form
           className="well form-horizontal"
           id="form"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit((data) => {
+            props.onSave(data);
+          })}
         >
           <center>
             <h2>Carbon Emissions Calculator</h2>
@@ -128,13 +133,7 @@ const Form = () => {
 
           <div className="form-group">
             <div className="col-md-4">
-              <button
-                type="submit"
-                className="btn btn-success"
-                onClick={() => {
-                  const values = getValues();
-                }}
-              >
+              <button type="submit" className="btn btn-success">
                 Add Flight
               </button>
             </div>
