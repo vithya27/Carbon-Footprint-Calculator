@@ -13,7 +13,7 @@ const Form = (props) => {
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
-      reset({ activity: "", from: "", to: "" });
+      reset("", { keepValues: false });
     }
   }, [formState, reset]);
 
@@ -139,6 +139,18 @@ const Form = (props) => {
             </div>
           </div>
         </form>
+        <span className="text-muted text-right text-bottom">
+          <h6>
+            Look up IATA code {""}
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.iata.org/en/publications/directories/code-search"
+            >
+              here
+            </a>
+          </h6>
+        </span>
       </div>
     </>
   );

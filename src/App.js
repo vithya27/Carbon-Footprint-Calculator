@@ -5,8 +5,8 @@ function App() {
   return (
     <div>
       <h1>Guilt Free Travels</h1>
-      <Calculator />
-    </div>
+      <Calculator/>
+       </div>
   );
 }
 
