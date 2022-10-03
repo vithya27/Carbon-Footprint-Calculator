@@ -37,10 +37,10 @@ const Form = () => {
                   {...register("activity", { required: true })}
                   aria-invalid={errors.activity ? "true" : "false"}
                 />
-                {errors.activity?.type === "required" && (
-                  <p role="alert">The activity is required</p>
-                )}
               </div>
+              {errors.activity?.type === "required" && (
+                <p role="alert">The activity is required</p>
+              )}
             </div>
           </div>
 
@@ -63,22 +63,23 @@ const Form = () => {
                   })}
                   aria-invalid={errors.from ? "true" : "false"}
                 />
-                {errors.from && errors.from?.type === "required" && (
-                  <p role="alert">The from field is required.</p>
-                )}
-                {errors.from && errors.from?.type === "minLength" && (
-                  <p role="alert">
-                    The from field requires a three letter IATA code for your
-                    airport.
-                  </p>
-                )}
-                {errors.from && errors.from?.type === "maxLength" && (
-                  <p role="alert">
-                    The from field requires a three letter IATA code for your
-                    airport.
-                  </p>
-                )}
               </div>
+              {errors.from && errors.from?.type === "required" && (
+                <p role="alert">The from field is required.</p>
+              )}
+              {errors.from && errors.from?.type === "minLength" && (
+                <p role="alert">
+                  The from field requires a three letter IATA code for your
+                  airport.
+                </p>
+              )}
+
+              {errors.from && errors.from?.type === "maxLength" && (
+                <p role="alert">
+                  The from field requires a three letter IATA code for your
+                  airport.
+                </p>
+              )}
             </div>
           </div>
 
@@ -101,22 +102,23 @@ const Form = () => {
                   })}
                   aria-invalid={errors.to ? "true" : "false"}
                 />
-                {errors.to && errors.to?.type === "required" && (
-                  <p role="alert">The to field is required.</p>
-                )}
-                {errors.to && errors.to?.type === "minLength" && (
-                  <p role="alert">
-                    The to field requires a three letter IATA code for your
-                    airport.
-                  </p>
-                )}
-                {errors.to && errors.to?.type === "maxLength" && (
-                  <p role="alert">
-                    The to field requires a three letter IATA code for your
-                    airport.
-                  </p>
-                )}
               </div>
+              {errors.to && errors.to?.type === "required" && (
+                <p role="alert">The to field is required.</p>
+              )}
+              {errors.to && errors.to?.type === "minLength" && (
+                <p role="alert">
+                  The to field requires a three letter IATA code for your
+                  airport.
+                </p>
+              )}
+
+              {errors.to && errors.to?.type === "maxLength" && (
+                <p role="alert">
+                  The to field requires a three letter IATA code for your
+                  airport.
+                </p>
+              )}
             </div>
           </div>
 
