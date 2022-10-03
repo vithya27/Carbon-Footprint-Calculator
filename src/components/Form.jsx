@@ -5,8 +5,12 @@ const Form = () => {
   const {
     register,
     handleSubmit,
+    reset,
+    getValues,
     formState: { errors },
   } = useForm();
+
+  reset({ ...getValues, activity: "" });
 
   const onSubmit = (data) => console.log(data);
 
@@ -124,7 +128,13 @@ const Form = () => {
 
           <div className="form-group">
             <div className="col-md-4">
-              <button type="submit" className="btn btn-success">
+              <button
+                type="submit"
+                className="btn btn-success"
+                onClick={() => {
+                  const values = getValues();
+                }}
+              >
                 Add Flight
               </button>
             </div>
