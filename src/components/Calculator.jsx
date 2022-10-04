@@ -4,31 +4,53 @@ import Table from "./Table";
 
 const Calculator = () => {
   const [activity, setActivity] = useState([]);
+  const [returns, setReturns] = useState([]);
+  const [error, setError] = useState(null);
 
   const handleFormData = (newActivity) => {
     setActivity([newActivity, ...activity]);
   };
 
-  const url = "https://beta3.api.climatiq.io/travel/flights";
-  const [data, setData] = useState([]);
+  const fetchPost = async (url) => {
+    setError(null);
 
-  useEffect(async () => {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer ",
-      },
-      body: `{"legs": [{ "from": "BER","to":  "SIN","passengers": 1,"class": "economy"}]}`,
-    });
-    const data = await res.json();
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer ",
+        },
+        body: `{"legs": [{ "from": "${activity[0].from}","to":  "${activity[0].to}","passengers": 1,"class": "economy"}]}`,
+      });
 
-    setData(data);
-  }, [url]);
+      if (res.status !== 200) {
+        throw new Error("Something went wrong.");
+      }
+
+      const data = await res.json();
+      setReturns([
+        {
+          activity: activity[0].activity,
+          co2e: data.co2e,
+          unit: data.co2e_unit,
+        },
+        ...returns,
+      ]);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  useEffect(() => {
+    const url = "https://beta3.api.climatiq.io/travel/flights";
+    fetchPost(url);
+  }, [activity]);
+  console.log(returns);
 
   return (
     <div className="app">
       <Form onSave={handleFormData} />
-      <Table activity={activity} data={data} />
+      <Table returns={returns} />
     </div>
   );
 };

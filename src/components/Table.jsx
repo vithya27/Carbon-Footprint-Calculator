@@ -1,12 +1,12 @@
 import React from "react";
 
 const Table = (props) => {
-  let activity = props.activity.map((d, index) => {
+  let history = props.returns.map((d, index) => {
     return (
       <tr key={index}>
         <td>{d.activity}</td>
-        <td>{d.from}</td>
-        <td>{d.to}</td>
+        <td>{parseInt(d.co2e, 10)}</td>
+        <td>{parseInt(d.co2e / 26, 10)}</td>
       </tr>
     );
   });
@@ -34,11 +34,7 @@ const Table = (props) => {
               <th scope="col">Number of trees you need to plant</th>
             </tr>
           </thead>
-          <tbody>
-            {activity}
-            {/* {CO2E}
-              {numberOfTrees} */}
-          </tbody>
+          <tbody>{history}</tbody>
         </table>
       </div>
     </div>
