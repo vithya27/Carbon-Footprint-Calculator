@@ -2,15 +2,52 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
-h1 {
+.formTitle,
+.tableTitle,
+.card-header {
   font-family: "Playfair Display", serif;
+  color: #1c4637;
+  padding: 10px;
+  text-align: center;
+}
+
+.btn {
+  background-color: #1c4637;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: white;
+  border: 2px solid #1c4637;
+  color: #1c4637;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 body {
   margin: 0;
-  background-color: whitesmoke;
+  background-color: #fffcf3;
+}
+
+.form .card {
+  height: fit-content;
+  padding: 10px;
+  width: 100%;
+  display: block;
+  border: 1px solid #81b622;
+  border-radius: 0.25rem;
 }
 
 .centered {

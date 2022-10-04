@@ -30,7 +30,8 @@ const Calculator = () => {
       const data = await res.json();
       setReturns([
         {
-          activity: activity[0].activity,
+          from: activity[0].from,
+          to: activity[0].to,
           co2e: data.co2e,
           unit: data.co2e_unit,
         },

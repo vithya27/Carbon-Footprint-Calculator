@@ -20,6 +20,7 @@ const Form = (props) => {
   return (
     <>
       <div className="container">
+        <br />
         <form
           className="well form-horizontal"
           id="form"
@@ -28,31 +29,8 @@ const Form = (props) => {
           })}
         >
           <center>
-            <h2>Carbon Emissions Calculator</h2>
+            <h2 className="formTitle">Carbon Emissions Calculator</h2>
           </center>
-
-          <div className="form-group">
-            <label htmlFor="activity" className="control-label col-md-4">
-              Activity:
-            </label>
-            <div className="col-md-4 inputGroupContainer">
-              <div className="input-group">
-                <span className="input-group-addon">
-                  <i className="glyphicon glyphicon-plane"></i>
-                </span>
-                <input
-                  className="form-control"
-                  placeholder="E.g. Flight from Singapore to Melbourne"
-                  {...register("activity", { required: true })}
-                  aria-invalid={errors.activity ? "true" : "false"}
-                />
-              </div>
-              {errors.activity?.type === "required" && (
-                <p role="alert">The activity is required</p>
-              )}
-            </div>
-          </div>
-
           <div className="form-group">
             <label htmlFor="for" className="control-label col-md-4">
               From:
@@ -60,7 +38,7 @@ const Form = (props) => {
             <div className="col-md-4 inputGroupContainer">
               <div className="input-group">
                 <span className="input-group-addon">
-                  <i className="glyphicon glyphicon-arrow-right"></i>
+                  <i className="fas fa-plane-departure"></i>
                 </span>
                 <input
                   className="form-control"
@@ -91,7 +69,6 @@ const Form = (props) => {
               )}
             </div>
           </div>
-
           <div className="form-group">
             <label htmlFor="to" className="control-label col-md-4">
               To:
@@ -99,7 +76,7 @@ const Form = (props) => {
             <div className="col-md-4 inputGroupContainer">
               <div className="input-group">
                 <span className="input-group-addon">
-                  <i className="glyphicon glyphicon-arrow-left"></i>
+                  <i className="fas fa-plane-arrival"></i>
                 </span>
                 <input
                   className="form-control"
@@ -130,27 +107,26 @@ const Form = (props) => {
               )}
             </div>
           </div>
-
           <div className="form-group">
             <div className="col-md-4">
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn">
                 Add Flight
               </button>
             </div>
-          </div>
+          </div>{" "}
+          <span className="text-muted text-right text-bottom">
+            <h6>
+              Look for the airport's IATA code {""}
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://www.iata.org/en/publications/directories/code-search"
+              >
+                here
+              </a>
+            </h6>
+          </span>
         </form>
-        <span className="text-muted text-right text-bottom">
-          <h6>
-            Look up IATA code {""}
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://www.iata.org/en/publications/directories/code-search"
-            >
-              here
-            </a>
-          </h6>
-        </span>
       </div>
     </>
   );
