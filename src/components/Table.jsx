@@ -35,16 +35,11 @@ const Table = (props) => {
 
         <div className="card">
           <h3 className="card-header">Summary of Carbon Footprint</h3>
-          <img
-            className="card-img-top"
-            src="https://cdn.shopify.com/s/files/1/0326/7189/products/mexicon-monarchs-ptwtnm_300x.jpg?v=1657136033
-"
-            alt="Plant a tree"
-          />
+
           <div className="card-body">
-            <h5 className="card-text">
+            <h4 className="card-text">
               You have to plant <b>xx</b> trees to offset xx kg of CO2E
-            </h5>
+            </h4>
             <a
               href="https://onetreeplanted.org/products/plant-trees"
               className="btn btn-success"

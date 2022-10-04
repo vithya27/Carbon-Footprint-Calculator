@@ -5,6 +5,33 @@
   font-family: "Nunito", sans-serif;
 }
 
+.backgroundContainer {
+  background-image: url("./assets/marita-kavelashvili-ugnrXk1129g-unsplash.jpg");
+  height: 100vh;
+  width: 100vh;
+  padding: 0px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 8rem;
+  color: #1c4637;
+  position: relative;
+  top: 100px;
+}
+
+.homeSubtitle {
+  color: #1c4637;
+  position: relative;
+  top: 90px;
+}
+
 .formTitle,
 .tableTitle,
 .card-header {
@@ -19,8 +46,6 @@
   border: none;
   color: white;
   padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
@@ -34,6 +59,10 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.buttonHolder {
+  text-align: center;
 }
 
 body {

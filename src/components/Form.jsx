@@ -108,7 +108,7 @@ const Form = (props) => {
             </div>
           </div>
           <div className="form-group">
-            <div className="col-md-4">
+            <div className="buttonHolder">
               <button type="submit" className="btn">
                 Add Flight
               </button>
