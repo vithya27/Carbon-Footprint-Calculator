@@ -19,7 +19,7 @@ const Calculator = () => {
       const res = await fetch(url, {
         method: "POST",
         headers: {
-          Authorization: "Bearer EQ9GQ6F1SSMVFKHPMC5HBM7Z52H7",
+          Authorization: "Bearer ",
         },
         body: `{"legs": [{ "from": "${activity[0].from}","to":  "${activity[0].to}","passengers": 1,"class": "economy"}]}`,
       });
