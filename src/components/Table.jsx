@@ -1,10 +1,13 @@
 import React from "react";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
 
 const Table = (props) => {
   const history = props.returns.map((d, index) => {
     return (
       <tr key={index}>
-        <td>{d.activity}</td>
+        <td>
+          {d.from} - {d.to}
+        </td>
         <td>{parseInt(d.co2e, 10)}</td>
         <td>{parseInt(d.co2e / 26, 10)}</td>
       </tr>
@@ -23,7 +26,7 @@ const Table = (props) => {
           <table className="table table-bordered">
             <thead>
               <tr className="bg-success">
-                <th scope="col">Activity</th>
+                <th scope="col">Flight Details</th>
                 <th scope="col">Amount of CO2E emitted</th>
                 <th scope="col">Number of trees you need to plant</th>
               </tr>
