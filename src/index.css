@@ -6,6 +6,11 @@
   color: #1c4637;
 }
 
+.well {
+  background-color: #fffcf3;
+  border: solid 2px #1c4637;
+}
+
 .backgroundContainer {
   background-image: url("./assets/marita-kavelashvili-ugnrXk1129g-unsplash.jpg");
   height: 100vh;
@@ -36,11 +41,14 @@
 .formTitle,
 .tableTitle,
 .card-header,
-.aboutTitle {
+.aboutTitle,
+.graphTitle {
   font-family: "Playfair Display", serif;
   color: #1c4637;
   padding: 10px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .aboutContainer {
@@ -54,7 +62,9 @@
   font-size: 18px;
   text-align: justify;
 }
-.btn {
+
+.btn,
+.btn:focus {
   background-color: #1c4637;
   border: none;
   color: white;

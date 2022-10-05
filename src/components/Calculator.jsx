@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Form from "./Form";
-import Table from "./Table";
+import Summary from "./Summary";
 import Graph from "./Graph";
 
 const Calculator = () => {
@@ -50,10 +50,18 @@ const Calculator = () => {
   console.log(returns);
 
   return (
-    <div className="app">
+    <div className="container">
       <Form onSave={handleFormData} />
-      <Graph returns={returns} />
-      <Table returns={returns} />
+
+      <h2 className="graphTitle">Carbon Emissions History</h2>
+      <div className="row">
+        <div className="col-sm-8">
+          <Graph returns={returns} />
+        </div>
+        <div className="col-sm-4">
+          <Summary returns={returns} />
+        </div>
+      </div>
     </div>
   );
 };

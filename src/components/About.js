@@ -18,7 +18,7 @@ const About = () => {
           years.
           <br />
           <br />
-          Globally, we wmit 40 gigatonnes of greenhouse gases into the
+          Globally, we emit 40 gigatonnes of greenhouse gases into the
           atmosphere each year. To stay reasonably safe from climate change, we
           need to reduce this number in half every decade.
           <br />
