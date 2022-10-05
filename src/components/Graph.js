@@ -20,8 +20,6 @@ const Graph = (props) => {
     };
   });
 
-  
-
   return (
     <ResponsiveContainer width="80%" height={400}>
       <BarChart

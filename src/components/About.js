@@ -8,12 +8,12 @@ const About = () => {
         <h1 className="aboutTitle">About</h1>
         <p>
           There are two things I know about myself. I will never stop wanting to
-          travel and if there is a chance to sleep, I will never give it up. I
+          travel and if there is a chance to travel, I will never give it up. I
           first visited Venice in 2014 as a wide-eyed university student eager
           to explore. Getting lost in Venice was an amazing experience. When I
           visited 5 years later, eager for that same experience, I was extremely
           disappointed. Most parts of Venice were flooded the moment the tide
-          rose up. Getting lost could potentially leave me stranded. It was a
+          rose up. Getting lost could potentially leave me stranded. It was
           sobering to see how much impact global warming had had in just 5
           years.
           <br />

@@ -21,7 +21,7 @@ const Calculator = () => {
         headers: {
           Authorization: "Bearer ",
         },
-        body: `{"legs": [{ "from": "${activity[0].from}","to":  "${activity[0].to}","passengers": 1,"class": "economy"}]}`,
+        body: `{"legs": [{ "from": "${activity[0].from.toUpperCase()}","to":  "${activity[0].to.toUpperCase()}","passengers": 1,"class": "economy"}]}`,
       });
 
       if (res.status !== 200) {
@@ -31,8 +31,8 @@ const Calculator = () => {
       const data = await res.json();
       setReturns([
         {
-          from: activity[0].from,
-          to: activity[0].to,
+          from: activity[0].from.toUpperCase(),
+          to: activity[0].to.toUpperCase(),
           co2e: data.co2e,
           unit: data.co2e_unit,
         },
@@ -40,6 +40,12 @@ const Calculator = () => {
       ]);
     } catch (err) {
       setError(err.message);
+      console.log(err.message);
+      if (
+        err.message !== "Cannot read properties of undefined (reading 'from')"
+      ) {
+        return alert(err.message);
+      }
     }
   };
 
@@ -47,7 +53,6 @@ const Calculator = () => {
     const url = "https://beta3.api.climatiq.io/travel/flights";
     fetchPost(url);
   }, [activity]);
-  console.log(returns);
 
   return (
     <div className="container">

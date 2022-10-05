@@ -28,6 +28,8 @@ const Summary = (props) => {
       </h4>
       <a
         href="https://onetreeplanted.org/products/plant-trees"
+        target="_blank"
+        rel="noreferrer"
         className="btn btn-success"
       >
         Offset your emissions by clicking here
