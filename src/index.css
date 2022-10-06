@@ -9,6 +9,7 @@
 .well {
   background-color: #fffcf3;
   border: solid 2px #1c4637;
+  height: 300px;
 }
 
 .backgroundContainer {
