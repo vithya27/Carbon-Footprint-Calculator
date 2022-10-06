@@ -8,8 +8,8 @@ import {
   XAxis,
   YAxis,
   Tooltip,
+  ResponsiveContainer,
 } from "recharts";
-import { ResponsiveContainer } from "recharts";
 
 const Graph = (props) => {
   const returns = props.returns.map((d) => {

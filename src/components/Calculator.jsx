@@ -40,7 +40,6 @@ const Calculator = () => {
       ]);
     } catch (err) {
       setError(err.message);
-      console.log(err.message);
       if (
         err.message !== "Cannot read properties of undefined (reading 'from')"
       ) {
@@ -58,7 +57,9 @@ const Calculator = () => {
     <div className="container">
       <Form onSave={handleFormData} />
 
-      <h2 className="graphTitle">Carbon Emissions History</h2>
+      <div className="graphTitleContainer">
+        <h1 className="graphTitle">Carbon Emissions History</h1>
+      </div>
       <div className="row">
         <div className="col-sm-8">
           <Graph returns={returns} />

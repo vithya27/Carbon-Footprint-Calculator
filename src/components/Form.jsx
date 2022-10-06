@@ -106,6 +106,7 @@ const Form = (props) => {
                 </p>
               )}
             </div>
+            
           </div>
           <div className="form-group">
             <div className="buttonHolder">
