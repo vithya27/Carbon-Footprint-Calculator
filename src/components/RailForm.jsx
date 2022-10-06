@@ -41,7 +41,7 @@ const Form = (props) => {
                 </span>
                 <input
                   className="form-control"
-                  placeholder="Enter the distance between stations"
+                  placeholder="Enter the distance between stations in miles"
                   {...register("distance", {
                     required: true,
                     valueAsNumber: true,

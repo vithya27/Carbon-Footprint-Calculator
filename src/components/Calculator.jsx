@@ -13,12 +13,6 @@ const Calculator = () => {
     setActivity([newActivity, ...activity]);
   };
 
-  const [railActivity, setRailActivity] = useState([]);
-
-  const handleRailFormData = (newRailActivity) => {
-    setRailActivity([newRailActivity, ...railActivity]);
-  };
-
   const fetchPost = async (url) => {
     setError(null);
 
@@ -60,6 +54,54 @@ const Calculator = () => {
     fetchPost(url);
   }, [activity]);
 
+  const [railActivity, setRailActivity] = useState([]);
+  const [railReturns, setRailReturns] = useState([]);
+  const [railError, setRailError] = useState(null);
+
+  const handleRailFormData = (newRailActivity) => {
+    setRailActivity([newRailActivity, ...railActivity]);
+  };
+
+  const fetchRailPost = async (url) => {
+    setRailError(null);
+
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer ",
+        },
+        body: `{"emission_factor": {"activity_id": "passenger_train-route_type_commuter_rail-fuel_source_na"},"parameters": {"passengers": 1,"distance": ${railActivity[0].distance},"distance_unit": "mi"}}`,
+      });
+
+      if (res.status !== 200) {
+        throw new railError("Something went wrong.");
+      }
+
+      const railData = await res.json();
+      setRailReturns([
+        {
+          distance: railActivity[0].distance,
+          co2e: railData.co2e,
+        },
+        ...railReturns,
+      ]);
+    } catch (err) {
+      setRailError(err.message);
+      if (
+        err.message !==
+        "Cannot read properties of undefined (reading 'distance')"
+      ) {
+        return alert(err.message);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const url = "https://beta3.api.climatiq.io/estimate";
+    fetchRailPost(url);
+  }, [railActivity]);
+
   return (
     <div className="container">
       <div className="graphTitleContainer">
@@ -75,12 +117,7 @@ const Calculator = () => {
         <h1 className="graphTitle">Carbon Emissions History</h1>
       </div>
       <div className="row">
-        <div className="col-sm-8">
-          <Graph returns={returns} />
-        </div>
-        <div className="col-sm-4">
-          <Summary returns={returns} />
-        </div>
+        <Graph returns={returns} railReturns={railReturns} />
       </div>
     </div>
   );
