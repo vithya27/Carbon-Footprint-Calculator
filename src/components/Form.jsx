@@ -19,7 +19,7 @@ const Form = (props) => {
 
   return (
     <>
-      <div className="container">
+      <div className="col-md-6">
         <br />
         <form
           className="well form-horizontal"
@@ -29,13 +29,13 @@ const Form = (props) => {
           })}
         >
           <center>
-            <h2 className="formTitle">Carbon Emissions Calculator</h2>
+            <h2 className="formTitle">Air Travel</h2>
           </center>
           <div className="form-group">
-            <label htmlFor="for" className="control-label col-md-4">
+            <label htmlFor="for" className="control-label col-md-2">
               From:
             </label>
-            <div className="col-md-4 inputGroupContainer">
+            <div className="col-md-10 inputGroupContainer">
               <div className="input-group">
                 <span className="input-group-addon">
                   <i className="fas fa-plane-departure"></i>
@@ -70,10 +70,10 @@ const Form = (props) => {
             </div>
           </div>
           <div className="form-group">
-            <label htmlFor="to" className="control-label col-md-4">
+            <label htmlFor="to" className="control-label col-md-2">
               To:
             </label>
-            <div className="col-md-4 inputGroupContainer">
+            <div className="col-md-10 inputGroupContainer">
               <div className="input-group">
                 <span className="input-group-addon">
                   <i className="fas fa-plane-arrival"></i>
@@ -106,7 +106,6 @@ const Form = (props) => {
                 </p>
               )}
             </div>
-            
           </div>
           <div className="form-group">
             <div className="buttonHolder">

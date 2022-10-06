@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Form from "./Form";
+import RailForm from "../components/RailForm";
 import Summary from "./Summary";
 import Graph from "./Graph";
 
@@ -10,6 +11,12 @@ const Calculator = () => {
 
   const handleFormData = (newActivity) => {
     setActivity([newActivity, ...activity]);
+  };
+
+  const [railActivity, setRailActivity] = useState([]);
+
+  const handleRailFormData = (newRailActivity) => {
+    setRailActivity([newRailActivity, ...railActivity]);
   };
 
   const fetchPost = async (url) => {
@@ -55,8 +62,15 @@ const Calculator = () => {
 
   return (
     <div className="container">
-      <Form onSave={handleFormData} />
-
+      <div className="graphTitleContainer">
+        <h1 className="graphTitle">Carbon Emissions Calculator</h1>
+      </div>
+      <div className="container">
+        <div className="row">
+          <Form onSave={handleFormData} />
+          <RailForm onSave={handleRailFormData} />
+        </div>
+      </div>
       <div className="graphTitleContainer">
         <h1 className="graphTitle">Carbon Emissions History</h1>
       </div>
