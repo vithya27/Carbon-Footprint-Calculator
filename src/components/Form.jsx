@@ -5,9 +5,13 @@ const Form = (props) => {
   const {
     // register an input field into React Hook Form so that it is available for the validation, and its value can be tracked for changes.
     register,
+    // receives form data if validation is successfull
     handleSubmit,
+    // reset entire form state
     reset,
+    // contains info about the entire form state.
     formState,
+
     formState: { errors, isSubmitSuccessful },
   } = useForm({ defaultValues: { activity: "", from: "", to: "" } });
 
@@ -19,7 +23,7 @@ const Form = (props) => {
 
   return (
     <>
-      <div className="container">
+      <div className="col-md-6">
         <br />
         <form
           className="well form-horizontal"
@@ -29,13 +33,13 @@ const Form = (props) => {
           })}
         >
           <center>
-            <h2 className="formTitle">Carbon Emissions Calculator</h2>
+            <h2 className="formTitle">Air Travel</h2>
           </center>
           <div className="form-group">
-            <label htmlFor="for" className="control-label col-md-4">
+            <label htmlFor="for" className="control-label col-md-2">
               From:
             </label>
-            <div className="col-md-4 inputGroupContainer">
+            <div className="col-md-10 inputGroupContainer">
               <div className="input-group">
                 <span className="input-group-addon">
                   <i className="fas fa-plane-departure"></i>
@@ -48,6 +52,7 @@ const Form = (props) => {
                     minLength: 3,
                     maxLength: 3,
                   })}
+                  // used to indicate that the value entered into an input field is not in a format or a value the application will accept
                   aria-invalid={errors.from ? "true" : "false"}
                 />
               </div>
@@ -60,7 +65,6 @@ const Form = (props) => {
                   airport.
                 </p>
               )}
-
               {errors.from && errors.from?.type === "maxLength" && (
                 <p role="alert">
                   The from field requires a three letter IATA code for your
@@ -70,10 +74,10 @@ const Form = (props) => {
             </div>
           </div>
           <div className="form-group">
-            <label htmlFor="to" className="control-label col-md-4">
+            <label htmlFor="to" className="control-label col-md-2">
               To:
             </label>
-            <div className="col-md-4 inputGroupContainer">
+            <div className="col-md-10 inputGroupContainer">
               <div className="input-group">
                 <span className="input-group-addon">
                   <i className="fas fa-plane-arrival"></i>
@@ -106,7 +110,6 @@ const Form = (props) => {
                 </p>
               )}
             </div>
-            
           </div>
           <div className="form-group">
             <div className="buttonHolder">
@@ -114,7 +117,7 @@ const Form = (props) => {
                 Add Flight
               </button>
             </div>
-          </div>{" "}
+          </div>
           <span className="text-muted text-right text-bottom">
             <h6>
               Look for the airport's IATA code {""}

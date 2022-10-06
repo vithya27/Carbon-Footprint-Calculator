@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Form from "./Form";
+import RailForm from "../components/RailForm";
 import Summary from "./Summary";
 import Graph from "./Graph";
 
 const Calculator = () => {
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  // For Air Travel
+  ///////////////////////////////////////////////////////////////////////////////////////////////
   const [activity, setActivity] = useState([]);
   const [returns, setReturns] = useState([]);
   const [error, setError] = useState(null);
@@ -53,8 +57,6 @@ const Calculator = () => {
     fetchPost(url);
   }, [activity]);
 
-<<<<<<< Updated upstream
-=======
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // For Rail Travel
   ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,21 +109,22 @@ const Calculator = () => {
     fetchRailPost(url);
   }, [railActivity]);
 
->>>>>>> Stashed changes
   return (
     <div className="container">
-      <Form onSave={handleFormData} />
-
+      <div className="graphTitleContainer">
+        <h1 className="graphTitle">Carbon Emissions Calculator</h1>
+      </div>
+      <div className="container">
+        <div className="row">
+          <Form onSave={handleFormData} />
+          <RailForm onSave={handleRailFormData} />
+        </div>
+      </div>
       <div className="graphTitleContainer">
         <h1 className="graphTitle">Carbon Emissions History</h1>
       </div>
       <div className="row">
-        <div className="col-sm-8">
-          <Graph returns={returns} />
-        </div>
-        <div className="col-sm-4">
-          <Summary returns={returns} />
-        </div>
+        <Graph returns={returns} railReturns={railReturns} />
       </div>
     </div>
   );

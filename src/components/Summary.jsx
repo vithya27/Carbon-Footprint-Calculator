@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
-import { number } from "yup";
 
 const Summary = (props) => {
   const summary = props.returns.map((d) => {
     return {
-      activity: `${d.from} - ${d.to}`,
-      CO2E: parseInt(d.co2e, 10),
-      unit: d.unit,
-      trees: parseInt(d.co2e / 26, 10),
+      activity: d.activity,
+      CO2E: parseInt(d.CO2E, 10),
+      trees: parseInt(d.CO2E / 26, 10),
     };
   });
 
