@@ -24,6 +24,7 @@ const Calculator = () => {
         method: "POST",
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+          Authorization: "Bearer ",
         },
         body: `{"legs": [{ "from": "${activity[0].from.toUpperCase()}","to":  "${activity[0].to.toUpperCase()}","passengers": 1,"class": "economy"}]}`,
       });
