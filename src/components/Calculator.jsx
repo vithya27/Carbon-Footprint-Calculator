@@ -23,7 +23,7 @@ const Calculator = () => {
       const res = await fetch(url, {
         method: "POST",
         headers: {
-          Authorization: "Bearer ",
+          Authorization: "Bearer 	",
         },
         body: `{"legs": [{ "from": "${activity[0].from.toUpperCase()}","to":  "${activity[0].to.toUpperCase()}","passengers": 1,"class": "economy"}]}`,
       });
@@ -76,7 +76,7 @@ const Calculator = () => {
       const res = await fetch(url, {
         method: "POST",
         headers: {
-          Authorization: "Bearer ",
+          Authorization: "Bearer 	",
         },
         body: `{"emission_factor": {"activity_id": "passenger_train-route_type_commuter_rail-fuel_source_na"},"parameters": {"passengers": 1,"distance": ${railActivity[0].distance},"distance_unit": "mi"}}`,
       });
