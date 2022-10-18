@@ -28,7 +28,8 @@ const About = () => {
           to meeting the targets needed for our planet's well-being. Yet, the
           desire to travel is strong. Knowing that travel is one of the largest
           factors behind my carbon footprint, I set about looking for ways to
-          mitigate or offset it.
+          mitigate or offset it. The simple but imperfect solution was to plant
+          trees to offset my carbon footprint during my travels.
         </p>
         <h1 className="aboutTitle">About One Tree Planted</h1>
         <iframe

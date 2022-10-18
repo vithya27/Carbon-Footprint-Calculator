@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.abc6fcf0.css",
+    "main.js": "/static/js/main.5a8754a1.js",
+    "static/media/marita-kavelashvili-ugnrXk1129g-unsplash.jpg": "/static/media/marita-kavelashvili-ugnrXk1129g-unsplash.ae4eda174fea2cca3118.jpg",
+    "static/media/yearlyimpactmobile-1642795729506.svg": "/static/media/yearlyimpactmobile-1642795729506.54e6fbd75322742b3a71ed3f28d1e56a.svg",
+    "index.html": "/index.html",
+    "main.abc6fcf0.css.map": "/static/css/main.abc6fcf0.css.map",
+    "main.5a8754a1.js.map": "/static/js/main.5a8754a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abc6fcf0.css",
+    "static/js/main.5a8754a1.js"
+  ]
+}
